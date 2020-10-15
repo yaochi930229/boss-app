@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Button } from 'antd-mobile';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <Button type="primary">按钮</Button>
+      <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
