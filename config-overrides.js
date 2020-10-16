@@ -10,6 +10,7 @@ module.exports = override(
       javascriptEnabled: true,
       modifyVars: {
         '@brand-primary': '#1DA57A',
+        '@brand-primary-tap': '#1DA57A',
       },
     },
   }),
