@@ -7,7 +7,9 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "antd-mobile": "^2.3.4",
+    "axios": "^0.20.0",
     "less-loader": "^7.0.2",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
@@ -44,5 +46,6 @@
     "less": "^2.7.3",
     "react-app-rewired": "^2.1.6",
     "redux-devtools-extension": "^2.13.8"
-  }
+  },
+  "proxy": "http://localhost:4000"
 }
