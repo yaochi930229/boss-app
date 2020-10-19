@@ -8,6 +8,7 @@ import {
   reqRegister,
   reqLogin,
   reqUpdateUserInfo,
+  reqUserInfo,
 } from '../api';
 
 // 授权成功的同步action
@@ -64,6 +65,19 @@ export const updateUser = (user) => {
     if (result.code === 0) { // 成功
       dispatch(receiveUser(result.data))
     } else { // 失败
+      dispatch(resetUser(result.msg))
+    }
+  }
+}
+
+// 获取用户信息
+export const getUserInfo = (userid) => {
+  return async dispatch => {
+    const response = await reqUserInfo(userid)
+    const result = response.data
+    if (result.code === 0) {
+      dispatch(receiveUser(result.data))
+    } else {
       dispatch(resetUser(result.msg))
     }
   }

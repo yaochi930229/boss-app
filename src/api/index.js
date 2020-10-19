@@ -8,3 +8,6 @@ export const reqLogin = ({username, password}) => ajax('/login', {username, pass
 // 更新用户接口
 export const reqUpdateUserInfo = (user) => ajax('/updateUserInfo', user, 'POST');
 
+// 获取用户信息
+export const reqUserInfo = () => ajax('/user');
+
