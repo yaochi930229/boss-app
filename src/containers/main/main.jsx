@@ -88,8 +88,8 @@ class Main extends Component {
       }
     }
     return (
-      <div>
-        {currentNav ? <NavBar>{currentNav.title}</NavBar> : null}
+      <div className="main-body-content">
+        {currentNav ? <NavBar className="sticky-header">{currentNav.title}</NavBar> : null}
         <Switch>
           {
             navList.map((nav, index) => <Route path={nav.path} component={nav.component} key={index} />)

@@ -5,6 +5,7 @@ import {
   ERROR_MSG,
   RESET_USER,
   RECEIVE_USER,
+  RECEIVE_USER_LIST,
 } from './actions-types';
 import { getRedirectTo } from '../utils';
 
@@ -31,8 +32,21 @@ function user(state=initUser, action) {
   }
 }
 
+const initUserList = []
+
+// 产生userList状态的reducer
+function userList(state=initUserList, action) {
+  switch (action.type) {
+    case RECEIVE_USER_LIST:
+      return action.data
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   user,
+  userList,
 })
 
 // 向外暴露的状态结构 { name: 1, labelName: 2 }
