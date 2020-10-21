@@ -8,6 +8,7 @@ import Login from './containers/login/login';
 import Main from './containers/main/main';
 
 import './assets/css/index.less';
+import './test/socketio_test'; // 没有暴露东西出来
 
 ReactDOM.render((
   <Provider store={store}>
