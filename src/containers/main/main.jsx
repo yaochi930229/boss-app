@@ -16,6 +16,7 @@ import Laoban from '../laoban/laoban';
 import UserCenter from '../user-center/user-center';
 import NotFund from '../../components/not-fund/not-fund';
 import NavFooter from '../../components/nav-footer/nav-footer';
+import Chat from '../chat/chat';
 
 
 
@@ -96,6 +97,7 @@ class Main extends Component {
           }
           <Route path='/laobaninfo' component={LaobanInfo} />
           <Route path='/dasheninfo' component={DashenInfo} />
+          <Route path='/chat/:userid' component={Chat} />
           <Route component={NotFund} />
         </Switch>
         {currentNav ? <NavFooter navList={navList} /> : null}

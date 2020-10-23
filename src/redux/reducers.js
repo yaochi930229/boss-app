@@ -6,6 +6,8 @@ import {
   RESET_USER,
   RECEIVE_USER,
   RECEIVE_USER_LIST,
+  RECEIVE_MSG_LIST,
+  RECEIVE_MSG,
 } from './actions-types';
 import { getRedirectTo } from '../utils';
 
@@ -44,9 +46,41 @@ function userList(state=initUserList, action) {
   }
 }
 
+
+const initChat = {
+  users: {}, // 所有用户信息的对象
+  chatMsgs: [], // 当前用户所有相关的msg的数组
+  unReadCount: 0, // 总的未读数量
+}
+// 产生聊天状态的reducer
+function chat(state=initChat, action) {
+  console.log(action.type, 'action=======')
+  console.log(state, 'state=======')
+  switch (action.type) {
+    case RECEIVE_MSG_LIST:  // data: {users, chatMsgs}
+      const {users, chatMsgs} = action.data
+      return {
+        users,
+        chatMsgs,
+        unReadCount: 0,
+      }
+    case RECEIVE_MSG:
+      const chatMsg = action.data
+      const _chatMsgs = state.chatMsgs ? state.chatMsgs : []
+      return {
+        users: state.users,
+        chatMsgs: [..._chatMsgs, chatMsg],
+        unReadCount: 0,
+      }
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   user,
   userList,
+  chat,
 })
 
 // 向外暴露的状态结构 { name: 1, labelName: 2 }

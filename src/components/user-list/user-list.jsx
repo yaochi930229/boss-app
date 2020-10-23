@@ -16,9 +16,9 @@ class UserList extends Component {
       <WingBlank>
         {
           userList.map(user => (
-            <div>
+            <div key={user._id}>
               <WhiteSpace />
-              <Card>
+              <Card onClick={() => this.props.history.push(`/chat/${user._id}`)}>
                 <Header thumb={require(`../../assets/images/header_${user.header}.jpg`)}
                         extra={user.username}
                         thumbStyle={{width:50}}></Header>
