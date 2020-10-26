@@ -89,7 +89,7 @@ class Main extends Component {
       }
     }
     return (
-      <div className="main-body-content">
+      <div className={currentNav ? 'main-body-content' : 'main-body-content-nobot'}>
         {currentNav ? <NavBar className="sticky-header">{currentNav.title}</NavBar> : null}
         <Switch>
           {
